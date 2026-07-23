@@ -1,5 +1,5 @@
 class Solution:
-    def plusOne(self, digits: list[int]) -> List[int]:
+    def plusOne(self, digits: list[int]) -> list[int]:
         n=len(digits)
         for i in range(n-1,0,-1):
             if digits[i]<9:
