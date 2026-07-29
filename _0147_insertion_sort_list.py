@@ -1,12 +1,12 @@
 # This is not the Ideal solution to the problem but just a brute force solution to it which can be applied by those who only know operation on arrays in Python
 
 # Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
 class Solution:
-    def insertionSortList(self, head: Optional[ListNode]) -> Optional[ListNode]: # pyright: ignore[reportUndefinedVariable]
+    def insertionSortList(self, head: ListNode|None) -> ListNode|None:
         array = []
         current = head
     
@@ -21,12 +21,12 @@ class Solution:
                 array[i+1]=array[i]#giving the value of current element to the element at previous index
                 i=i-1#pointing out the index to a prior element(i.e. j-2, j-3,....)
             array[i+1]=key
-        dummy = ListNode(0) # pyright: ignore[reportUndefinedVariable]
+        dummy = ListNode(0) 
         current = dummy
     
         # Iterate and chain new nodes
         for item in array:
-            current.next = ListNode(item) # pyright: ignore[reportUndefinedVariable]
+            current.next = ListNode(item)
             current = current.next
         
         # Return the actual head (skip dummy)
