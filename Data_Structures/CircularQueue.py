@@ -12,6 +12,9 @@ class CircularQueue:
     def is_empty(self: CircularQueue)->bool:
         if self.front is None and self.rear is None:
             return True
+        assert self.front is not None
+        if self.front.next is self.rear:
+            return False
         return False
 
 
